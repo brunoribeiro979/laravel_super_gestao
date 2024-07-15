@@ -227,3 +227,17 @@ PUT e PATCH /* atualizar dados, update */
 
 // exemplo de formatacao de data na view
 <td>{{ $produto->pivot->created_at->format('d/m/Y') }}</td>
+
+
+@auth
+    <h1>Usuário autenticado</h1>
+    <p>ID: {{ Auth::user()->id }}</p>
+    <p>Nome: {{ Auth::user()->name }}</p>
+    <p>Email: {{ Auth::user()->email }}</p>
+
+@endauth
+
+
+@guest
+    Olá visitante, seja bem vindo!
+@endguest
